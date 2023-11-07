@@ -4,8 +4,15 @@ import time
 from colorama import Fore, Style
 
 # Initialize the OpenAI API with your key
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = "EMPTY"
+openai.api_base = "http://172.29.40.171:8000/v1"
+max_tokens = 1024 # change when using openAI API
+
 conversation_history = []
+messages=[
+        {"role": "system", "content": "You are a 23 year old, who's free to express their opinion. You always respond and express your honest opinion. You are a very opinionated person."},
+  ]
+conversation_history.append(messages[0])
 
 def chat_with_gpt3(prompt):
     """
@@ -16,8 +23,8 @@ def chat_with_gpt3(prompt):
     # calculate the response time from GPT-3
     start_time = time.time()
     response = openai.ChatCompletion.create(
-      model="gpt-3.5-turbo",
-      max_tokens=100,  # You can adjust the number of tokens (words) you want in the response
+      model = "Llama-2-7b-chat-hf",
+      max_tokens=max_tokens,  # You can adjust the number of tokens (words) you want in the response
       messages=conversation_history,
     )
     end_time = time.time()
