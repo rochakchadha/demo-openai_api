@@ -2,7 +2,7 @@ import os
 import openai
 
 openai.api_key = "EMPTY"
-openai.api_base = "http://172.29.40.171:8000/v1"
+openai.api_base = "http://172.29.40.249:8000/v1"
 
 response = openai.ChatCompletion.create(
     model = "Llama-2-7b-chat-hf",
