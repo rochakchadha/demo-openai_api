@@ -3,9 +3,6 @@
 #source /datadrive/miniconda3/etc/profile.d/conda.sh
 
 
-#sudo su
-#conda activate textgen
-#echo "done"
 # Check if specific screen sessions exist
 if screen -ls | grep -q -E "(openai-server|llama2-7b-model|fastchat_server_controller)"; then
     echo "One or more of the specified screen sessions already exist. Exiting."
